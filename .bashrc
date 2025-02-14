@@ -19,6 +19,21 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# ~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~~~~~~~~~~
+
+# ls
+alias ls='ls --color=auto'
+alias ll='ls -la'
+# alias la='exa -laghm@ --all --icons --git --color=always'
+alias la='ls -lathr'
+
+# kubectl
+alias k='kubectl'
+
+source /etc/bash_completion
+source <(kubectl completion bash)
+complete -o default -F __start_kubectl k
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
